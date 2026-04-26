@@ -10,9 +10,9 @@
                     "stdio"
                 ],
                 "env": {
-                    "JIRA_URL": "YOUR_JIRA_URL",
-                    "JIRA_USERNAME": "YOUR_JIRA_USERNAME",
-                    "JIRA_API_TOKEN": "YOUR_JIRA_API_TOKEN"
+                    "JIRA_URL": "https://umeshsoni110893.atlassian.net/",
+                    "JIRA_USERNAME": "umeshsoni110893@gmail.com",
+                    "JIRA_API_TOKEN": "REDACTED"
                 }
             },
             "playwright": {
@@ -39,7 +39,7 @@
                 "command": "npx",
                 "args": ["-y", "@modelcontextprotocol/server-github@latest"],
                 "env": {
-                    "GITHUB_PERSONAL_ACCESS_TOKEN": "YOUR_GITHUB_PAT"
+                    "GITHUB_PERSONAL_ACCESS_TOKEN": "REDACTED"
                 }
             }
         }
