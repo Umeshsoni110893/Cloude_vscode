@@ -29,9 +29,9 @@ test.describe('Checkout Tests', () => {
     await page.click('#login-btn');
 
     await page.click('#view-cart-btn');
+    const dialogPromise = page.waitForEvent('dialog');
     await page.click('#checkout-btn');
-
-    const dialog = await page.waitForEvent('dialog');
+    const dialog = await dialogPromise;
     expect(dialog.message()).toBe('Your cart is empty!');
     await dialog.dismiss();
   });
