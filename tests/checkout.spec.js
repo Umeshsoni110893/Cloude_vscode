@@ -1,8 +1,12 @@
 const { test, expect } = require('@playwright/test');
+const path = require('path');
+
+// Resolve the path to index.html relative to this test file
+const indexUrl = 'file://' + path.resolve(__dirname, '../index.html').replace(/\\/g, '/');
 
 test.describe('Checkout Tests', () => {
   test('Add items to cart and checkout', async ({ page }) => {
-    await page.goto('file:///c:/Users/user/Desktop/Claude_VsCode/index.html');
+    await page.goto(indexUrl);
 
     await page.fill('#username', 'test_user');
     await page.fill('#password', 'password123');
@@ -18,7 +22,7 @@ test.describe('Checkout Tests', () => {
   });
 
   test('Attempt checkout with empty cart', async ({ page }) => {
-    await page.goto('file:///c:/Users/user/Desktop/Claude_VsCode/index.html');
+    await page.goto(indexUrl);
 
     await page.fill('#username', 'test_user');
     await page.fill('#password', 'password123');
